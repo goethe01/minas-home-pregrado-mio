@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual : Flujo Joomla a GitHub</title>
+    
+    <!-- CSS Framework -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+            color: #0f172a; /* slate-900 */
+        }
+        
+        .custom-scroll::-webkit-scrollbar { width: 6px; }
+        .custom-scroll::-webkit-scrollbar-track { background: #f1f5f9; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        .custom-scroll::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        /* Flowchart Specific Styles */
+        .flow-step {
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+        .flow-step.active {
+            border-color: #0ea5e9; /* sky-500 */
+            background-color: #f0f9ff; /* sky-50 */
+            transform: translateX(5px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .flow-connector {
+            width: 2px;
+            height: 20px;
+            background-color: #cbd5e1; /* slate-300 */
+            margin: 0 auto;
+        }
+        .flow-arrow {
+            color: #cbd5e1;
+            font-size: 1.2rem;
+            line-height: 0.5;
+            margin-bottom: 4px;
+        }
+        
+        /* VS Code GIF Placeholder */
+        .gif-placeholder {
+            background-image: repeating-linear-gradient(45deg, #f1f5f9 25%, transparent 25%, transparent 75%, #f1f5f9 75%, #f1f5f9), repeating-linear-gradient(45deg, #f1f5f9 25%, #ffffff 25%, #ffffff 75%, #f1f5f9 75%, #f1f5f9);
+            background-position: 0 0, 10px 10px;
+            background-size: 20px 20px;
+        }
+
+        /* Tree Styles */
+        .tree-line {
+            border-left: 2px solid #e2e8f0;
+            margin-left: 0.75rem;
+            padding-left: 1rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation -->
+    <nav class="bg-slate-900 text-white sticky top-0 z-50 shadow-md border-b-4 border-sky-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <span class="text-2xl">🏛️</span>
+                    <span class="font-bold text-lg tracking-tight">Lineamientos de Arquitectura Web</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#joomla" class="hover:bg-slate-700 px-3 py-2 rounded-md text-sm font-medium transition-colors">1. Fase Joomla</a>
+                        <a href="#github" class="hover:bg-slate-700 px-3 py-2 rounded-md text-sm font-medium transition-colors">2. Fase GitHub</a>
+                        <a href="#flujo" class="hover:bg-slate-700 px-3 py-2 rounded-md text-sm font-medium transition-colors">3. Flujo Diario</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="bg-white border-b border-slate-200 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold text-slate-900 mb-4">Manual: Flujo Joomla a GitHub</h1>
+            <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                Guía para la gestión, organización y respaldo de código fuente e insumos multimedia para los portales de la Facultad de Minas.
+            </p>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-20">
+
+        <!-- ========================================== -->
+        <!-- FASE 1: JOOMLA (Gestión de Medios)         -->
+        <!-- ========================================== -->
+        <section id="joomla" class="scroll-mt-24">
+            <div class="flex items-center gap-3 mb-8">
+                <span class="bg-sky-100 text-sky-600 p-2 rounded-lg text-2xl"> CMS </span>
+                <h2 class="text-3xl font-extrabold text-slate-900">1. La Fase Joomla (Gestor de Contenidos)</h2>
+            </div>
+            
+            <p class="text-lg text-slate-600 mb-8">Todo cambio nace aquí. Joomla es el alojamiento <strong>principal</strong> para los recursos multimedia (imágenes, PDFs).</p>
+
+            <!-- Alerta de Flujo de Aprobación -->
+            <div class="bg-amber-50 border-l-4 border-amber-500 p-5 mb-8 rounded-r-lg shadow-sm">
+                <div class="flex items-center gap-2 mb-2">
+                    <span class="text-xl">⚠️</span>
+                    <h3 class="font-bold text-amber-800 text-lg">Requisito de Aprobación Previa</h3>
+                </div>
+                <p class="text-amber-700 text-sm">
+                    <strong>Antes de realizar cualquier cambio definitivo en el código de Joomla</strong>, este debe ser previamente editado, revisado y aprobado mediante un Pull Request en el repositorio de GitHub (este proceso se explica más adelante).
+                </p>
+            </div>
+
+            <!-- 1. Definición de Micrositio (Diseño exacto solicitado) -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-8 md:p-10 mb-8">
+                <div class="flex items-start gap-4 mb-6">
+                    <div class="bg-sky-100 text-sky-600 p-3 rounded-lg text-2xl leading-none">🌐</div>
+                    <div>
+                        <h3 class="text-3xl font-extrabold text-slate-900 mb-2">¿Qué define a un Micrositio?</h3>
+                        <p class="text-lg text-slate-600">Entendiendo la arquitectura base para organizar nuestras carpetas.</p>
+                    </div>
+                </div>
+                
+                <div class="prose prose-slate max-w-none text-slate-700 space-y-4">
+                    <p>
+                        En el contexto de la plataforma web gestionada con Joomla, la estructura visual (el header con el menú de navegación) no siempre representa la estructura técnica. Para organizar correctamente nuestro repositorio en GitHub, debemos identificar qué secciones son <strong>Micrositios</strong>.
+                    </p>
+                    <p>
+                        Un <strong>Micrositio</strong> se define como una instalación o instancia aislada de Joomla. Esto significa que contiene sus propios artículos (páginas web), su propia base de datos y su propia gestión de recursos, los cuales no están mezclados con el portal principal u otros micrositios.
+                    </p>
+                    
+                    <div class="bg-slate-900 text-slate-300 p-6 rounded-xl mt-6 shadow-inner">
+                        <h4 class="text-white font-bold mb-4 flex items-center gap-2 text-lg"><span>💡</span> El acceso al Administrador</h4>
+                        <p class="text-sm mb-4">La forma para confirmar si una sección es un micrositio independiente es mediante la URL del administrador:</p>
+                        <ol class="list-decimal list-inside space-y-3 text-sm ml-2 mb-6">
+                            <li>Ve a la URL de la sección en cuestión (ej. <code class="bg-slate-700 text-sky-300 px-2 py-0.5 rounded">https://minas.medellin.unal.edu.co/vicedecanaturadeinvestigacion/index.php/investigacion-fm/grupos-de-investigacion</code>).</li>
+                            <li>Quita <code class="bg-slate-700 text-white font-bold px-2 py-0.5 rounded">index.php</code> y todo lo que esté después.</li>
+                            <li>Agrega <code class="bg-slate-700 text-white font-bold px-2 py-0.5 rounded">administrator</code> al final de la URL.</li>
+                            <li>El link debería quedar de la siguiente manera: <code class="bg-slate-700 text-sky-300 px-2 py-0.5 rounded">https://minas.medellin.unal.edu.co/vicedecanaturadeinvestigacion/administrator</code></li>
+                            <li>Presiona Enter.</li>
+                        </ol>
+                        <div class="p-4 bg-slate-800 rounded-lg border border-slate-700">
+                            <span class="font-bold text-white">Resultado:</span> Si la página te solicita un <em class="text-slate-300">Usuario y Contraseña de Joomla</em> específico para esa ruta, <strong>estás frente a un Micrositio</strong>. 
+                        </div>
+                    </div>
+
+                    <p class="mt-6 font-semibold text-slate-800">
+                        Regla de Repositorio: Cada Micrositio identificado mediante este método debe tener su propia carpeta principal en la raíz de nuestro repositorio en GitHub (ej. <code>micrositio-facultad-de-minas</code>, <code>micrositio-cdi</code>).
+                    </p>
+                </div>
+            </div>
+
+            <!-- 2. Compresión y Árbol de Carpetas -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                
+                <!-- Compresión -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-slate-200">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-2xl">🗜️</span>
+                        <h3 class="font-bold text-xl text-slate-800">Optimización de Assets</h3>
+                    </div>
+                    <p class="text-slate-600 mb-6">
+                        Antes de subir cualquier imagen a Joomla, es obligatorio realizar un proceso de compresión para optimizar los tiempos de carga. Esto para garantizar el cumplimiento del límite establecido, según el cual las imágenes y archivos, como los PDFs, no deben superar los <strong>50 MB</strong>.
+                    </p>
+                    <ul class="space-y-4 text-slate-700">
+                        <li class="flex items-start gap-3">
+                            <span class="text-emerald-500 font-bold mt-1 text-xl">✔️</span>
+                            <span>Utilizar herramientas como <strong>TinyPNG</strong> a la cual pueden acceder por <code class="bg-slate-700 text-sky-300 px-2 py-0.5 rounded">https://tinyjpg.com/</code> para reducir el peso sin pérdida de calidad visual.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-emerald-500 font-bold mt-1 text-xl">✔️</span>
+                            <span>Se recomienda, siempre que sea posible, utilizar el formato <strong>.webp</strong> para las imágenes. Si se requiere convertir el formato, puede hacerse fácilmente mediante la herramienta disponible en el siguiente enlace: <code class="bg-slate-700 text-sky-300 px-2 py-0.5 rounded">https://squoosh.app/</code>.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Árbol de Carpetas Joomla -->
+                <div class="bg-slate-50 p-8 rounded-xl border border-slate-200 shadow-inner">
+                    <h3 class="font-bold text-lg text-slate-800 mb-4 border-b border-slate-200 pb-2 flex items-center gap-2"><span>📂</span> Estructura de las Carpetas en Joomla</h3>
+                    <p class="text-sm text-slate-600 mb-6">Para mantener el orden, la primera capa siempre será el <strong>Año Actual</strong>, seguida del micrositio y subcarpetas creadas <em>a demanda</em> (solo cuando se necesiten).</p>
+                    
+                    <!-- HTML Tree -->
+                    <div class="font-mono text-sm text-slate-700 space-y-1">
+                        <div class="flex items-center gap-2 font-bold text-slate-900"><span>📁</span> Raíz Multimedia</div>
+                        
+                        <div class="tree-line">
+                            <div class="flex items-center gap-2 font-bold text-blue-700 bg-blue-50 w-fit pr-2 rounded mt-2"><span>📁</span> 2026 <span class="text-xs font-normal text-slate-400 ml-2">&lt;-- Agrupación por Año</span></div>
+                            
+                            <div class="tree-line">
+                                <div class="flex items-center gap-2 font-bold text-slate-800 mt-2"><span>📁</span> micrositio-facultad-de-minas</div>
+                                
+                                <div class="tree-line">
+                                    <div class="flex items-center gap-2 mt-1"><span>📁</span> comunicaciones <span class="text-xs text-slate-400 ml-2">&lt;-- Creado a demanda</span></div>
+                                    
+                                    <div class="tree-line">
+                                        <!-- Categoría img y docs -->
+                                        <div class="flex items-center gap-2 mt-1 font-bold text-emerald-700"><span>📁</span> img <span class="text-xs font-normal text-slate-400 ml-2">&lt;-- Visuales</span></div>
+                                        <div class="tree-line">
+                                            <div class="flex items-center gap-2 text-slate-500"><span>🖼️</span> banner-principal.webp</div>
+                                        </div>
+                                        
+                                        <div class="flex items-center gap-2 mt-2 font-bold text-rose-700"><span>📁</span> docs <span class="text-xs font-normal text-slate-400 ml-2">&lt;-- Descargables</span></div>
+                                        <div class="tree-line">
+                                            <div class="flex items-center gap-2 text-slate-500"><span>📄</span> resolucion.pdf</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-center gap-2 font-bold text-slate-800 mt-4"><span>📁</span> micrositio-vie</div>
+                                <div class="tree-line">
+                                    <div class="text-xs text-slate-400 italic mt-1">... carpetas internas</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- FASE 2: GITHUB (Respaldo de Código)        -->
+        <!-- ========================================== -->
+        <section id="github" class="scroll-mt-24 pt-8 border-t border-slate-200">
+            <div class="flex items-center gap-3 mb-8">
+                <span class="bg-slate-800 text-white p-2 rounded-lg text-2xl"> GIT </span>
+                <h2 class="text-3xl font-extrabold text-slate-900">2. La Fase GitHub (Repositorio de Código)</h2>
+            </div>
+            
+            <p class="text-lg text-slate-600 mb-8">Una vez el contenido está publicado en Joomla, usamos GitHub estrictamente como <strong>bóveda de respaldo del código HTML/CSS/JS</strong>. Las carpetas en GitHub seguirán una estructura similar a la usada en Joomla, sin embargo
+                solo vamos a usar como carpeta raíz el nombre del micrositio, es decir, no usaremos como primera capa la carpeta de <strong>año actual</strong>.</p> 
+
+            <!-- Árbol de Carpetas GitHub (NUEVO) -->
+            <div class="bg-slate-50 p-8 rounded-xl border border-slate-200 shadow-inner mb-8">
+                <h3 class="font-bold text-lg text-slate-800 mb-4 border-b border-slate-200 pb-2 flex items-center gap-2"><span>📂</span> Estructura de las Carpetas en GitHub</h3>
+                <p class="text-sm text-slate-600 mb-6">La carpeta raíz será directamente el micrositio. <strong class="text-rose-600">No se deben guardar archivos distintos al código (.html, .css, .js) en GitHub</strong>, ya que los archivos multimedia e imágenes ya están centralizados en Joomla.</p>
+                
+                <!-- HTML Tree GitHub -->
+                <div class="font-mono text-sm text-slate-700 space-y-1">
+                    <div class="flex items-center gap-2 font-bold text-slate-900"><span>📁</span> Repositorio GitHub</div>
+                    
+                    <div class="tree-line">
+                        <div class="flex items-center gap-2 font-bold text-blue-700 bg-blue-50 w-fit pr-2 rounded mt-2"><span>📁</span> micrositio-facultad-de-minas <span class="text-xs font-normal text-slate-400 ml-2">&lt;-- Carpeta Raíz Principal</span></div>
+                        
+                        <div class="tree-line">
+                            <div class="flex items-center gap-2 mt-1"><span>📁</span> comunicaciones <span class="text-xs text-slate-400 ml-2">&lt;-- Subcarpeta (Igual a Joomla)</span></div>
+                            
+                            <div class="tree-line">
+                                <div class="flex items-center gap-2 text-slate-500 mt-1"><span>📄</span> convocatorias.html <span class="text-xs font-normal text-slate-400 ml-2">&lt;-- Solo archivos de código</span></div>
+                                <div class="flex items-center gap-2 text-slate-500 mt-1"><span>📄</span> eventos-vie.html</div>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-2 font-bold text-slate-800 mt-4"><span>📁</span> micrositio-vie</div>
+                        <div class="tree-line">
+                            <div class="text-xs text-slate-400 italic mt-1">... carpetas internas</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <!-- Kebab Case -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-xl">🔤</span>
+                        <h3 class="font-bold text-lg text-slate-800">Kebab-case y Prefijos</h3>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-3">
+                        Todo en minúsculas y separado por guiones. Los micrositios (carpetas principales) deben llevar el prefijo.
+                    </p>
+                    <div class="bg-slate-50 p-3 rounded font-mono text-sm border border-slate-100">
+                        <div class="text-emerald-600 font-bold mb-1">✔️ micrositio-bienestar/</div>
+                        <div class="text-emerald-600 font-bold">✔️ historia-facultad.html</div>
+                        <div class="text-rose-500 line-through mt-2 text-xs">❌ Micrositio Bienestar</div>
+                    </div>
+                </div>
+
+                <!-- Cero Versionado -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-xl">⏳</span>
+                        <h3 class="font-bold text-lg text-slate-800">Cero Versionado de Archivos</h3>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-3">
+                        Git guarda el historial automáticamente. No se debe usar años o "versiones" en el nombre de los archivos HTML. Sobreescribimos el mismo archivo siempre.
+                    </p>
+                    <div class="bg-slate-50 p-3 rounded font-mono text-sm border border-slate-100">
+                        <div class="text-emerald-600 font-bold mb-1">✔️ decano.html</div>
+                        <div class="text-rose-500 line-through mt-2 text-xs">❌ decano-2026.html</div>
+                        <div class="text-rose-500 line-through text-xs">❌ prueba-final.html</div>
+                    </div>
+                </div>
+
+                <!-- El Escudo Gitignore -->
+                <div class="bg-slate-900 p-6 rounded-xl shadow-md border border-slate-800 text-white">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="text-xl">🛡️</span>
+                        <h3 class="font-bold text-lg text-sky-400">El Escudo: .gitignore</h3>
+                    </div>
+                    <p class="text-sm text-slate-300 mb-3">
+                        <strong>Regla: No guardamos Assets en GitHub.</strong> Ya viven en Joomla. El archivo <code>.gitignore</code> bloquea automáticamente subidas por error.
+                    </p>
+                    <div class="bg-[#1e1e1e] p-3 rounded font-mono text-xs border border-slate-700 text-amber-300">
+                        <div>*.webp</div>
+                        <div>*.png / *.jpg</div>
+                        <div class="text-sky-300 mt-2">*.pdf</div>
+                        <div class="text-sky-300">*.docx</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Commits y VS Code -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-8">
+                <div class="flex flex-col gap-8 items-start">
+                    
+                    <div class="w-full">
+                        <h3 class="font-bold text-2xl text-slate-800 mb-4 border-b border-slate-100 pb-2">El Idioma del Repositorio</h3>
+                        <p class="text-slate-600 mb-6">
+                            Para mantener un estándar internacional y facilitar la lectura del historial, <strong>todos los mensajes de commit deben redactarse en Inglés y ser descriptivos</strong> (explicar qué y por qué se hizo).
+                        </p>
+                        
+                        <div class="bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded mb-6">
+                            <span class="text-xs text-emerald-600 font-bold uppercase block mb-1">Ejemplo de Commit Ideal</span>
+                            <code class="text-emerald-900 font-bold">"Add link to graduates list for collective graduation ceremony 2026-1S"</code>
+                        </div>
+
+                        <div class="bg-rose-50 border-l-4 border-rose-500 p-4 rounded">
+                            <span class="text-xs text-rose-600 font-bold uppercase block mb-1">Ejemplos Incorrectos (Pobres)</span>
+                            <code class="text-rose-900 block mb-1">❌ "Update html"</code>
+                            <code class="text-rose-900 block">❌ "cambios en graduados"</code>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================== -->
+        <!-- FASE 3: FLUJO DIARIO (Diagrama PRs)        -->
+        <!-- ========================================== -->
+        <section id="flujo" class="scroll-mt-24 pt-8 border-t border-slate-200 mb-16">
+            <h2 class="text-3xl font-extrabold text-slate-900 mb-2">3. Flujo Diario de Trabajo</h2>
+            <p class="text-slate-600 mb-8">Nuestra rama principal (<code>main</code>) está protegida. Sigue este proceso interactivo desde la edición en VS Code hasta la publicación y verificación final en Joomla.</p>
+
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+                
+                <!-- Diagrama de Flujo Interactivo -->
+                <div class="w-full md:w-1/3 flex flex-col items-center">
+                    
+                    <div class="flow-step active w-full bg-white border-2 border-slate-200 rounded-lg p-4 text-center shadow-sm" data-step="1">
+                        <span class="block text-2xl mb-1">🌿</span>
+                        <span class="font-bold text-slate-800 text-sm">1. Preparación en Local</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="flow-connector"></div>
+                        <div class="flow-arrow">▼</div>
+                    </div>
+
+                    <div class="flow-step w-full bg-white border-2 border-slate-200 rounded-lg p-4 text-center shadow-sm" data-step="2">
+                        <span class="block text-2xl mb-1">📂</span>
+                        <span class="font-bold text-slate-800 text-sm">2. Carga a Joomla</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="flow-connector"></div>
+                        <div class="flow-arrow">▼</div>
+                    </div>
+
+                    <div class="flow-step w-full bg-white border-2 border-slate-200 rounded-lg p-4 text-center shadow-sm" data-step="3">
+                        <span class="block text-2xl mb-1">🤝</span>
+                        <span class="font-bold text-slate-800 text-sm">3. Commit y PR</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="flow-connector"></div>
+                        <div class="flow-arrow">▼</div>
+                    </div>
+
+                    <div class="flow-step w-full bg-white border-2 border-slate-200 rounded-lg p-4 text-center shadow-sm" data-step="4">
+                        <span class="block text-2xl mb-1">👑</span>
+                        <span class="font-bold text-slate-800 text-sm">4. Revisión de Admin</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="flow-connector"></div>
+                        <div class="flow-arrow">▼</div>
+                    </div>
+
+                    <div class="flow-step w-full bg-white border-2 border-slate-200 rounded-lg p-4 text-center shadow-sm" data-step="5">
+                        <span class="block text-2xl mb-1">📋</span>
+                        <span class="font-bold text-slate-800 text-sm">5. Pegar en Joomla y Guardar</span>
+                    </div>
+
+                </div>
+
+                <!-- Panel de Detalles del Flujo -->
+                <div class="w-full md:w-2/3">
+                    <div class="bg-white rounded-xl shadow-md border border-slate-200 p-8 min-h-[420px] relative overflow-hidden" id="flow-details-panel">
+                        <div class="absolute -right-10 -top-10 text-9xl opacity-5 select-none" id="flow-bg-icon">🌿</div>
+                        <div class="relative z-10" id="flow-content">
+                            <!-- El contenido se inyecta por JS -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Application Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Datos para el diagrama de flujo interactivo
+            const flowData = {
+                '1': {
+                    title: 'Preparación en Repositorio Local',
+                    icon: '🌿',
+                    content: `
+                        <p class="text-slate-700 text-lg mb-4">El proceso inicia en el editor de código (VS Code).</p>
+                        <p class="text-slate-600 mb-4">Dado que el editor de Joomla puede ser difícil de manejar, comenzamos estructurando el código de forma segura en nuestro repositorio local.</p>
+                        <ul class="space-y-3 text-slate-600">
+                            <li class="flex items-start gap-2">
+                                <span class="text-sky-500 font-bold">•</span>
+                                <span>Asegúrate de estar actualizado: <code>git pull origin main</code></span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-sky-500 font-bold">•</span>
+                                <span>Crea tu rama de trabajo (ej. <code>feature/actualizar-convocatoria</code>).</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-sky-500 font-bold">•</span>
+                                <span>Crea o edita las carpetas y archivos HTML necesarios siguiendo estrictamente la rúbrica (kebab-case, prefijo de micrositio, etc).</span>
+                            </li>
+                        </ul>
+                    `
+                },
+                '2': {
+                    title: 'Carga de Assets a Joomla',
+                    icon: '📂',
+                    content: `
+                        <p class="text-slate-700 text-lg mb-4 font-bold text-sky-700">Subiendo recursos multimedia</p>
+                        <p class="text-slate-600 mb-4">Si tu código incluye imágenes o documentos nuevos, estos deben ir a Joomla, no a GitHub.</p>
+                        <ul class="space-y-3 text-slate-600">
+                            <li class="flex items-start gap-2">
+                                <span class="text-emerald-500 font-bold">✔️</span>
+                                <span>Comprime los archivos (TinyPNG para imágenes y iLovePDF para documentos). No deben superar los 50 MB.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-emerald-500 font-bold">✔️</span>
+                                <span>Ve al Media Manager de Joomla.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-emerald-500 font-bold">✔️</span>
+                                <span>Crea la estructura de carpetas si no existe (ej. <code>/2026/micrositio-x/.../img/</code>) y sube allí los archivos comprimidos.</span>
+                            </li>
+                        </ul>
+                    `
+                },
+                '3': {
+                    title: 'Commit y Pull Request (PR)',
+                    icon: '🤝',
+                    content: `
+                        <p class="text-slate-700 text-lg mb-4">Confirmando la propuesta de código.</p>
+                        <p class="text-slate-600 mb-4">Con el código listo localmente, se envía a revisión mediante GitHub.</p>
+                        <ul class="space-y-3 text-slate-600">
+                            <li class="flex items-start gap-2">
+                                <span class="text-emerald-500 font-bold">✔️</span>
+                                <span><strong>Commit en Inglés:</strong> En VS Code, redacta tu commit descriptivo (ej. <em>"Add link to graduates list..."</em>) y haz <code>Push</code> a tu rama.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-emerald-500 font-bold">✔️</span>
+                                <span><strong>Pull Request:</strong> Ve a GitHub.com, haz clic en "Compare & pull request" y notifica a los administradores para su revisión.</span>
+                            </li>
+                        </ul>
+                    `
+                },
+                '4': {
+                    title: 'Revisión y Aprobación de Admin',
+                    icon: '👑',
+                    content: `
+                        <p class="text-slate-700 text-lg mb-4">Control de calidad y seguridad.</p>
+                        <p class="text-slate-600 mb-4">Los administradores reciben la solicitud de PR. Su labor es validar el proceso:</p>
+                        <ul class="space-y-3 text-slate-600">
+                            <li class="flex items-start gap-2">
+                                <span class="text-emerald-500 font-bold">✔️</span>
+                                <span>Revisar que el código HTML cumpla con las normas.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-emerald-500 font-bold">✔️</span>
+                                <span>Verificar que no se estén subiendo archivos multimedia al repositorio.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-emerald-500 font-bold">✔️</span>
+                                <span>Aprobar el PR y ejecutar el "Merge" hacia <code>main</code>.</span>
+                            </li>
+                        </ul>
+                    `
+                },
+                '5': {
+                    title: 'Pegar en Joomla y Guardar',
+                    icon: '📋',
+                    content: `
+                        <p class="text-slate-700 text-lg mb-4">Llevando el código verificado a producción.</p>
+                        <ol class="list-decimal list-inside space-y-3 text-slate-600">
+                            <li>Copia el código HTML definitivo (ya aprobado en GitHub).</li>
+                            <li>Abre el administrador de Joomla y entra al artículo correspondiente.</li>
+                            <li>Cambia a la vista de "Código Fuente" (Source Code) en el editor de Joomla y <strong>pega</strong> el código HTML.</li>
+                            <li>Utiliza la opción de Vista Previa (Preview) para verificar que el diseño, imágenes y enlaces funcionen correctamente.</li>
+                            <li><strong>Guarda los cambios de forma definitiva.</strong></li>
+                        </ol>
+                    `
+                }
+            };
+
+            const steps = document.querySelectorAll('.flow-step');
+            const flowContent = document.getElementById('flow-content');
+            const flowBgIcon = document.getElementById('flow-bg-icon');
+
+            function updateFlowPanel(stepKey) {
+                const data = flowData[stepKey];
+                if(!data) return;
+
+                flowContent.style.opacity = 0;
+                
+                setTimeout(() => {
+                    flowBgIcon.textContent = data.icon;
+                    
+                    flowContent.innerHTML = `
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="bg-sky-100 text-sky-700 font-bold px-2 py-1 rounded text-sm">Paso ${stepKey}</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-800 mb-6 pb-2 border-b border-slate-100 flex items-center gap-3">
+                            <span>${data.icon}</span> ${data.title}
+                        </h3>
+                        <div>
+                            ${data.content}
+                        </div>
+                    `;
+                    flowContent.style.opacity = 1;
+                    flowContent.style.transition = 'opacity 0.3s ease-in-out';
+                }, 150);
+            }
+
+            steps.forEach(step => {
+                step.addEventListener('click', (e) => {
+                    // Remover activo de todos
+                    steps.forEach(s => {
+                        s.classList.remove('active', 'border-sky-500', 'bg-sky-50');
+                        s.classList.add('border-slate-200');
+                    });
+                    
+                    // Agregar activo al seleccionado
+                    const current = e.currentTarget;
+                    current.classList.add('active');
+                    current.classList.replace('border-slate-200', 'border-sky-500');
+                    
+                    updateFlowPanel(current.getAttribute('data-step'));
+                });
+            });
+
+            // Init
+            updateFlowPanel('1');
+            steps[0].classList.replace('border-slate-200', 'border-sky-500');
+        });
+    </script>
+</body>
+</html>

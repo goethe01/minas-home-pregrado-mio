@@ -1,0 +1,2731 @@
+<!DOCTYPE html>
+<html lang="es-es" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.5, user-scalable=yes">
+    <title>UNAL - Facultad de Minas - Sede Medellín</title>
+    
+    <!-- Favicon e Iconos -->
+    <link href="https://minas.medellin.unal.edu.co/media/templates/site/unal/images/favicon.ico" rel="icon" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+
+    <!-- Estilos Oficiales UNAL (Joomla Template) -->
+    <link href="https://minas.medellin.unal.edu.co/media/templates/site/unal/css/frontend.css?2bc458" rel="stylesheet">
+    <link href="https://minas.medellin.unal.edu.co/media/templates/site/unal/css/accesibilidad.css?2bc458" rel="stylesheet">
+    <link href="https://minas.medellin.unal.edu.co/media/templates/site/unal/css/bootstrap.min.css?2bc458" rel="stylesheet">
+    <link href="https://minas.medellin.unal.edu.co/media/templates/site/unal/css/bootstrap-theme.min.css?2bc458" rel="stylesheet">
+    <link href="https://minas.medellin.unal.edu.co/media/templates/site/unal/css/reset.css?2bc458" rel="stylesheet">
+    <link href="https://minas.medellin.unal.edu.co/media/templates/site/unal/css/unal.css?2bc458" rel="stylesheet">
+    <link href="https://minas.medellin.unal.edu.co/media/templates/site/unal/css/base.css?2bc458" rel="stylesheet">
+    <link href="https://minas.medellin.unal.edu.co/media/templates/site/unal/css/tablet.css?2bc458" rel="stylesheet">
+    <link href="https://minas.medellin.unal.edu.co/media/templates/site/unal/css/phone.css?2bc458" rel="stylesheet">
+    <link href="https://minas.medellin.unal.edu.co/media/templates/site/unal/css/small.css?2bc458" rel="stylesheet">
+    <link href="https://minas.medellin.unal.edu.co/media/templates/site/unal/css/sede.css?2bc458" rel="stylesheet">
+    <link href="https://minas.medellin.unal.edu.co/media/templates/site/unal/css/template.css?2bc458" rel="stylesheet">
+    <link href="https://minas.medellin.unal.edu.co/media/templates/site/unal/css/user.css?2bc458" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Variables globales de colores (Paleta Institucional) -->
+    <style>
+        :root {
+            --primary: #f9ae00;
+            --text-color: #212529;
+            --link-color: #f9ae00;
+            --background-color: #f0efea;
+        }
+        body {
+            background-color: var(--background-color);
+        }
+        /* Hover del menú desplegable institucional */
+        .dropdown-menu li:hover,
+        .dropdown-menu li:focus-within,
+        ul.dropdown-menu li:hover,
+        ul.dropdown-menu li:focus-within {
+            background-color: var(--primary, #1C3669) !important;
+        }
+        .dropdown-menu a:hover,
+        .dropdown-menu a:focus,
+        .dropdown-menu a:active,
+        .dropdown-menu li:hover a,
+        .dropdown-item:hover,
+        .dropdown-item:focus,
+        .dropdown-item:active {
+            background-color: var(--primary, #1C3669) !important;
+            color: #fff !important;
+            text-decoration: none !important;
+        }
+        /* =========================================
+   SECCIÓN ADMISIÓN
+========================================= */
+
+.admission-section {
+  background: #ffffff;
+}
+
+.admission-block {
+  margin-top: 55px;
+}
+
+
+/* =========================================
+   ENCABEZADOS DE BLOQUES
+========================================= */
+
+.admission-block-heading {
+  margin-bottom: 25px;
+}
+
+.admission-block-heading > span {
+  display: inline-block;
+
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+
+  color: #c98a00;
+
+  margin-bottom: 6px;
+}
+
+.admission-block-heading h3 {
+  margin: 0 0 8px;
+
+  font-size: 1.55rem;
+  font-weight: 700;
+
+  color: #212529;
+}
+
+.admission-block-heading p {
+  margin: 0;
+  color: #666;
+}
+
+
+/* =========================================
+   TARJETAS ASPIRANTES
+========================================= */
+
+.admission-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.admission-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 25px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e2e2;
+  border-radius: 12px;
+
+  color: inherit;
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.admission-card:hover {
+  transform: translateY(-4px);
+
+  border-color: #f9ae00;
+
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+
+  text-decoration: none;
+}
+
+.admission-icon {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: rgba(249, 174, 0, 0.13);
+
+  color: #ce8e00;
+
+  font-size: 1.25rem;
+
+  margin-bottom: 18px;
+}
+
+.admission-card h4 {
+  margin: 0 0 9px;
+
+  font-size: 1.05rem;
+  font-weight: 700;
+
+  color: #212529;
+}
+
+.admission-card p {
+  flex: 1;
+
+  margin: 0 0 18px;
+
+  font-size: 0.9rem;
+  line-height: 1.6;
+
+  color: #666;
+}
+
+.admission-link {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  font-size: 0.86rem;
+  font-weight: 600;
+
+  color: #a87300;
+}
+
+.admission-card:hover .admission-link {
+  color: #212529;
+}
+
+
+/* =========================================
+   TARJETA DESTACADA - RESULTADOS
+========================================= */
+
+.admission-featured-grid {
+  max-width: 100%;
+}
+
+.admission-card-featured {
+  flex-direction: row;
+  align-items: center;
+
+  gap: 22px;
+
+  background: #f8f8f6;
+
+  border-left: 4px solid #f9ae00;
+}
+
+.admission-card-featured .admission-icon {
+  flex-shrink: 0;
+
+  width: 62px;
+  height: 62px;
+
+  margin: 0;
+
+  font-size: 1.5rem;
+}
+
+.admission-card-featured h4 {
+  font-size: 1.2rem;
+}
+
+
+/* =========================================
+   PROGRAMAS ESPECIALES
+========================================= */
+
+.special-admission-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+.special-admission-card {
+  padding: 25px;
+
+  background: #f7f7f5;
+
+  border-radius: 12px;
+  border: 1px solid #e3e3e3;
+}
+
+.special-admission-header {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 15px;
+
+  margin-bottom: 18px;
+}
+
+.special-admission-header .admission-icon {
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.special-code {
+  display: block;
+
+  margin-bottom: 4px;
+
+  font-size: 0.75rem;
+  font-weight: 800;
+
+  color: #c18400;
+
+  letter-spacing: 0.08em;
+}
+
+.special-admission-card h4 {
+  margin: 0;
+
+  font-size: 1rem;
+  line-height: 1.4;
+
+  color: #212529;
+}
+
+.special-admission-card p {
+  color: #666;
+
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+
+/* LINKS PAES */
+
+.special-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.special-links a {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  padding: 11px 0;
+
+  border-top: 1px solid #ddd;
+
+  color: #555;
+
+  font-size: 0.86rem;
+
+  text-decoration: none;
+}
+
+.special-links a:hover {
+  color: #c18400;
+}
+
+.special-main-link {
+  display: inline-flex;
+
+  gap: 8px;
+
+  margin-top: 10px;
+
+  color: #a87300;
+
+  font-size: 0.88rem;
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+.special-main-link:hover {
+  color: #212529;
+}
+
+
+/* =========================================
+   PRUEBAS
+========================================= */
+
+.tests-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 18px;
+}
+
+.test-card {
+  display: grid;
+
+  grid-template-columns: auto 1fr auto;
+
+  align-items: center;
+
+  gap: 16px;
+
+  padding: 20px;
+
+  border: 1px solid #e2e2e2;
+
+  border-radius: 10px;
+
+  background: #fff;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  transition: 0.25s ease;
+}
+
+.test-card > i:first-child {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: rgba(249, 174, 0, 0.13);
+
+  color: #c18400;
+}
+
+.test-card > i:last-child {
+  color: #999;
+}
+
+.test-card h4 {
+  margin: 0 0 5px;
+
+  color: #212529;
+
+  font-size: 0.98rem;
+}
+
+.test-card p {
+  margin: 0;
+
+  color: #777;
+
+  font-size: 0.82rem;
+}
+
+.test-card:hover {
+  transform: translateY(-3px);
+
+  border-color: #f9ae00;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+
+  text-decoration: none;
+}
+
+
+/* =========================================
+   ACCIÓN FINAL
+========================================= */
+
+.admission-main-action {
+  margin-top: 50px;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 30px;
+
+  padding: 25px 28px;
+
+  border-radius: 12px;
+
+  background: #212529;
+}
+
+.admission-main-action strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #fff;
+
+  font-size: 1rem;
+}
+
+.admission-main-action span {
+  color: #ccc;
+
+  font-size: 0.88rem;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1050px) {
+
+  .admission-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .special-admission-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tests-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .admission-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admission-card-featured {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admission-main-action {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admission-main-action .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+}
+    </style>
+</head>
+
+<body class="home">
+    <!-- Skip Links para accesibilidad -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    <a href="#main-menu" class="skip-link">Saltar al menú principal</a>
+    <a href="#footer" class="skip-link">Saltar al pie de página</a>
+
+    <!-- 1. Servicios Institucionales (Desplegable superior izquierdo) -->
+    <nav id="services" aria-label="Servicios institucionales">
+        <div class="indicator d-none d-md-block" aria-hidden="true"></div>
+        <ul class="dropdown-menu" id="servicios" role="list">
+            <li role="listitem">
+                <a href="https://smartkey.xertica.com/cloudkey/a/unal.edu.co/user/login" target="_blank" rel="noopener noreferrer">
+                    <img src="https://minas.medellin.unal.edu.co/media/templates/site/unal/images/icnServEmail.png" width="32" height="32" alt="">Correo Electrónico
+                </a>
+            </li>
+            <li role="listitem">
+                <a href="https://dninfoa.unal.edu.co" target="_blank" rel="noopener noreferrer">
+                    <img src="https://minas.medellin.unal.edu.co/media/templates/site/unal/images/icnServSia.png" width="32" height="32" alt="">DNINFOA - SIA
+                </a>
+            </li>
+            <li role="listitem">
+                <a href="https://bibliotecas.unal.edu.co" target="_blank" rel="noopener noreferrer">
+                    <img src="https://minas.medellin.unal.edu.co/media/templates/site/unal/images/icnServLibrary.png" width="32" height="32" alt="">Bibliotecas
+                </a>
+            </li>
+            <li role="listitem">
+                <a href="https://personal.unal.edu.co" target="_blank" rel="noopener noreferrer">
+                    <img src="https://minas.medellin.unal.edu.co/media/templates/site/unal/images/icnServCall.png" width="32" height="32" alt="">Convocatorias
+                </a>
+            </li>
+            <li role="listitem">
+                <a href="https://identidad.unal.edu.co" target="_blank" rel="noopener noreferrer">
+                    <img src="https://minas.medellin.unal.edu.co/media/templates/site/unal/images/icnServIdentidad.png" width="32" height="32" alt="">Identidad UNAL
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- 2. Header Principal -->
+    <header id="unalTop" role="banner">
+        <!-- Logo institucional UNAL -->
+        <div class="logo">
+            <a href="https://unal.edu.co" aria-label="Ir a la página principal de la Universidad Nacional de Colombia">
+                <svg width="93%" height="93%" role="img" aria-labelledby="escudo-unal-title">
+                    <title id="escudo-unal-title">Escudo de la Universidad Nacional de Colombia</title>
+                    <image href="https://minas.medellin.unal.edu.co/media/templates/site/unal/images/escudoUnal.svg" width="100%" height="100%" class="hidden-print" />
+                </svg>
+                <img src="https://minas.medellin.unal.edu.co/media/templates/site/unal/images/escudoUnal_black.png" class="d-none d-print-block" alt="Escudo UNAL" />
+            </a>
+        </div>
+        
+        <!-- Sello de Colombia -->
+        <div class="seal">
+            <img class="d-print-none" alt="Escudo de la República de Colombia" src="https://minas.medellin.unal.edu.co/media/templates/site/unal/images/sealColombia.png" width="66" height="66" />
+            <img class="d-none d-print-block" alt="Escudo de la República de Colombia" src="https://minas.medellin.unal.edu.co/media/templates/site/unal/images/sealColombia_black.png" width="66" height="66" />
+        </div>
+
+        <!-- Menú Superior (Perfiles y Accesos) -->
+        <div class="firstMenu d-none d-md-block">
+            <div class="content-fluid">
+                <nav class="navbar navbar-expand-md nav navbar-dark">
+                    <div class="collapse navbar-collapse navbar-default" id="navbarSupportedContent">
+                        <nav id="profiles" aria-label="Perfiles de usuario">
+                            <ul class="mr-auto nav justify-content-end">
+                                <li class="nav-item item_Aspirantes"><a href="https://aspirantes.unal.edu.co" rel="noopener">Aspirantes</a></li>
+                                <li class="nav-item item_Estudiantes"><a href="https://medellin.unal.edu.co/estudiantes/" rel="noopener">Estudiantes</a></li>
+                                <li class="nav-item item_Egresados"><a href="https://medellin.unal.edu.co/egresados/" rel="noopener">Egresados</a></li>
+                                <li class="nav-item item_Docentes"><a href="https://medellin.unal.edu.co/docentes/" rel="noopener">Docentes</a></li>
+                                <li class="nav-item item_Administrativos"><a href="https://medellin.unal.edu.co/administrativos/" rel="noopener">Administrativos</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Menú Inferior, Buscador y Navegación Principal -->
+        <div id="bs-navbar" class="navigation d-none d-md-block">
+            <div class="site-url" id="subdominio">
+                <a href='https://minas.medellin.unal.edu.co/' aria-label="Ir a la página de inicio">minas.medellin.unal.edu.co</a>
+            </div>
+            
+            <!-- Buscador Institucional -->
+            <div class="buscador" id="buscador" role="search" aria-label="Buscador del sitio">
+                <div class="gcse-searchbox-only" data-resultsurl="https://unal.edu.co/resultados-de-la-busqueda/" data-newwindow="true"></div>
+            </div>
+
+            <!-- Menú Principal de Secciones -->
+            <nav class="navbar-dark mainMenu" id="main-menu" aria-label="Menú principal">
+                <div id="main_menu_container">
+                    <!-- Dropdown: La Facultad -->
+                    <div class="btn-group">
+                        <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="button">
+                            <a href="#" class="parent-link" tabindex="-1" aria-hidden="true">La Facultad</a>
+                            <span class="caret" aria-hidden="true"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a class='dropdown-item' href='#'>Conoce la Facultad</a></li>
+                            <li><a class='dropdown-item' href='#'>Equipo Directivo</a></li>
+                            <li><a class='dropdown-item' href='#'>Áreas Curriculares</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Dropdown: Sedes -->
+                    <div class="btn-group menu_sedes">
+                        <button class="btn btn-default dropdown-toggle" data-toggle="dropdown" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Sedes de la Universidad Nacional">Sedes<span class="caret" aria-hidden="true"></span></button>
+                        <ul class="dropdown-menu" id="sedes" role="menu">
+                            <li role="none"><a class="dropdown-item" href="https://bogota.unal.edu.co" target="_blank" rel="noopener">Bogotá</a></li>
+                            <li role="none"><a class="dropdown-item" href="https://medellin.unal.edu.co" target="_blank" rel="noopener">Medellín</a></li>
+                            <li role="none"><a class="dropdown-item" href="https://www.manizales.unal.edu.co" target="_blank" rel="noopener">Manizales</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 3. Panel Flotante de Accesibilidad -->
+    <aside class="tx-unal-accesibilidad" aria-label="Panel de herramientas de accesibilidad">
+        <div id="panel-accesibilidad" class="panel-content container-fluid" role="region" aria-label="Configuración de accesibilidad">
+            <div class="accesibilidad-container">
+                <div class="accesibilidad-grupo" role="group">
+                    <h4>Tamaño letra</h4>
+                    <div class="accesibilidad-botones">
+                        <button class="boton-panel" id="letra-disminuir" onclick="cambiarTamanioLetra('-')" type="button">A<sup aria-hidden="true">-</sup></button>
+                        <button class="boton-panel" id="letra-aumentar" onclick="cambiarTamanioLetra('+')" type="button">A<sup aria-hidden="true">+</sup></button>
+                        <input readonly class="letras-porcentaje" id="letter-percent" type="text" value="100%" tabindex="-1">
+                    </div>
+                </div>
+                <div class="accesibilidad-grupo" role="group">
+                    <h4>Contrastes</h4>
+                    <div class="accesibilidad-botones">
+                        <button class="boton-panel" onclick="cambiarContrastes(1)" type="button">1</button>
+                        <button class="boton-panel" onclick="cambiarContrastes(2)" type="button">2</button>
+                        <button class="boton-panel" onclick="cambiarContrastes(3)" type="button">3</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="pestania-accesibilidad" aria-expanded="false" aria-controls="panel-accesibilidad">Panel de Accesibilidad</button>
+    </aside>
+
+    <!-- 4. Contenido Principal de tu Página -->
+    <main id="main-content" role="main" tabindex="-1" class="unal-content" style="padding: 40px; min-height: 400px;">
+        <div class="container">
+
+              <!-- HERO -->
+
+    <section class="hero" id="inicio">
+
+      <div class="container hero-content">
+
+        <span class="eyebrow">
+          Facultad de Minas · Sede Medellín
+        </span>
+
+        <h1>
+          Información para estudiantes de pregrado
+        </h1>
+
+        <p>
+          Encuentra en un solo lugar los principales servicios,
+          trámites, plataformas y oportunidades que necesitas
+          durante tu vida universitaria.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#servicios" class="btn btn-primary">
+
+            <i class="fa-solid fa-compass"></i>
+
+            Explorar servicios
+
+          </a>
+
+
+          <button
+            class="btn btn-secondary"
+            onclick="openModal('modal-nuevo')"
+          >
+            Soy estudiante nuevo
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- =========================================
+     ADMISIÓN
+========================================== -->
+
+<section class="section admission-section" id="admision">
+
+  <div class="container">
+
+    <!-- ENCABEZADO -->
+
+    <div class="section-heading centered">
+
+      <span class="section-tag">
+        Admisión
+      </span>
+
+      <h2>
+        Información para aspirantes
+      </h2>
+
+      <p>
+        Encuentra información sobre el proceso de admisión,
+        modalidades especiales de ingreso y pruebas de admisión
+        de la Universidad Nacional de Colombia.
+      </p>
+
+    </div>
+
+
+    <!-- =====================================
+         ETAPAS DEL PROCESO
+    ====================================== -->
+
+    <div class="admission-block">
+
+      <div class="admission-block-heading">
+
+        <span>Proceso de ingreso</span>
+
+        <h3>
+          Etapas del Proceso de Admisión
+        </h3>
+
+      </div>
+
+
+      <div class="admission-featured-grid">
+
+        <a
+          href="https://admisiones.unal.edu.co/pregrado/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="admission-card admission-card-featured"
+        >
+
+          <div class="admission-icon">
+            <i class="fa-solid fa-square-poll-vertical"></i>
+          </div>
+
+          <div>
+
+            <h4>
+              Consultar resultados
+            </h4>
+
+            <p>
+              Consulta los resultados correspondientes al proceso
+              de admisión de pregrado.
+            </p>
+
+            <span class="admission-link">
+              Consultar información
+              <i class="fa-solid fa-arrow-right"></i>
+            </span>
+
+          </div>
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================
+         INFORMACIÓN PARA ASPIRANTES
+    ====================================== -->
+
+    <div class="admission-block">
+
+      <div class="admission-block-heading">
+
+        <span>Antes de ingresar</span>
+
+        <h3>
+          Información para aspirantes
+        </h3>
+
+        <p>
+          Selecciona la opción que corresponda a tu situación.
+        </p>
+
+      </div>
+
+
+      <div class="admission-grid">
+
+        <!-- PREGRADO -->
+
+        <a
+          href="https://admisiones.unal.edu.co/pregrado/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="admission-card"
+        >
+
+          <div class="admission-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+
+          <h4>
+            Admisión a pregrado
+          </h4>
+
+          <p>
+            Información general sobre el proceso de admisión
+            a programas curriculares de pregrado.
+          </p>
+
+          <span class="admission-link">
+            Ver información
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
+
+        </a>
+
+
+        <!-- PRUEBA ESPECÍFICA -->
+
+        <a
+          href="https://admisiones.unal.edu.co/pregrado/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="admission-card"
+        >
+
+          <div class="admission-icon">
+            <i class="fa-solid fa-clipboard-check"></i>
+          </div>
+
+          <h4>
+            Programas con prueba específica
+          </h4>
+
+          <p>
+            Consulta los programas curriculares que requieren
+            pruebas adicionales dentro del proceso de admisión.
+          </p>
+
+          <span class="admission-link">
+            Ver información
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
+
+        </a>
+
+
+        <!-- DISCAPACIDAD -->
+
+        <a
+          href="https://admisiones.unal.edu.co/pregrado/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="admission-card"
+        >
+
+          <div class="admission-icon">
+            <i class="fa-solid fa-universal-access"></i>
+          </div>
+
+          <h4>
+            Aspirantes con discapacidad
+          </h4>
+
+          <p>
+            Información relacionada con condiciones y apoyos
+            durante el proceso de admisión.
+          </p>
+
+          <span class="admission-link">
+            Ver información
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
+
+        </a>
+
+
+        <!-- EXALUMNOS -->
+
+        <a
+          href="https://admisiones.unal.edu.co/pregrado/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="admission-card"
+        >
+
+          <div class="admission-icon">
+            <i class="fa-solid fa-user-graduate"></i>
+          </div>
+
+          <h4>
+            Exalumnos de la Universidad
+          </h4>
+
+          <p>
+            Consulta las condiciones del proceso de admisión
+            para exalumnos de la Universidad Nacional de Colombia.
+          </p>
+
+          <span class="admission-link">
+            Ver información
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
+
+        </a>
+
+
+        <!-- FUERA DE COLOMBIA -->
+
+        <a
+          href="https://admisiones.unal.edu.co/pregrado/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="admission-card"
+        >
+
+          <div class="admission-icon">
+            <i class="fa-solid fa-earth-americas"></i>
+          </div>
+
+          <h4>
+            Aspirantes fuera de Colombia
+          </h4>
+
+          <p>
+            Información para quienes participan en el proceso
+            mientras se encuentran fuera del país.
+          </p>
+
+          <span class="admission-link">
+            Ver información
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
+
+        </a>
+
+
+        <!-- EXTRANJEROS -->
+
+        <a
+          href="https://admisiones.unal.edu.co/pregrado/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="admission-card"
+        >
+
+          <div class="admission-icon">
+            <i class="fa-solid fa-passport"></i>
+          </div>
+
+          <h4>
+            Aspirantes extranjeros
+          </h4>
+
+          <p>
+            Consulta información para aspirantes extranjeros
+            interesados en estudiar en la Universidad.
+          </p>
+
+          <span class="admission-link">
+            Ver información
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================
+         PROGRAMAS DE ADMISIÓN ESPECIAL
+    ====================================== -->
+
+    <div class="admission-block">
+
+      <div class="admission-block-heading">
+
+        <span>Modalidades de ingreso</span>
+
+        <h3>
+          Programas de Admisión Especial
+        </h3>
+
+      </div>
+
+
+      <div class="special-admission-grid">
+
+
+        <!-- PAES -->
+
+        <article class="special-admission-card">
+
+          <div class="special-admission-header">
+
+            <div class="admission-icon">
+              <i class="fa-solid fa-users"></i>
+            </div>
+
+            <div>
+
+              <span class="special-code">
+                PAES
+              </span>
+
+              <h4>
+                Programas de Admisión Especial
+              </h4>
+
+            </div>
+
+          </div>
+
+
+          <div class="special-links">
+
+            <a href="https://admisiones.unal.edu.co/pregrado/" target="_blank">
+              Comunidades Indígenas
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="https://admisiones.unal.edu.co/pregrado/" target="_blank">
+              Mejores Bachilleres
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="https://admisiones.unal.edu.co/pregrado/" target="_blank">
+              Mejores Bachilleres de Municipios Pobres
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="https://admisiones.unal.edu.co/pregrado/" target="_blank">
+              Población Negra, Afrocolombiana, Palenquera y Raizal
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="https://admisiones.unal.edu.co/pregrado/" target="_blank">
+              Víctimas del Conflicto Armado Interno
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- PEAMA -->
+
+        <article class="special-admission-card">
+
+          <div class="special-admission-header">
+
+            <div class="admission-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+
+            <div>
+
+              <span class="special-code">
+                PEAMA
+              </span>
+
+              <h4>
+                Programa Especial de Admisión y Movilidad Académica
+              </h4>
+
+            </div>
+
+          </div>
+
+          <p>
+            Programa dirigido a aspirantes de las regiones
+            Amazonía, Caribe, Orinoquía y Tumaco.
+          </p>
+
+          <a
+            href="https://admisiones.unal.edu.co/pregrado/"
+            target="_blank"
+            class="special-main-link"
+          >
+            Conocer PEAMA
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+        </article>
+
+
+        <!-- PAET -->
+
+        <article class="special-admission-card">
+
+          <div class="special-admission-header">
+
+            <div class="admission-icon">
+              <i class="fa-solid fa-map-location-dot"></i>
+            </div>
+
+            <div>
+
+              <span class="special-code">
+                PAET
+              </span>
+
+              <h4>
+                Programa de Admisión Especial con Enfoque Territorial
+              </h4>
+
+            </div>
+
+          </div>
+
+          <p>
+            Consulta las convocatorias de admisión asociadas al
+            Programa de Admisión Especial con Enfoque Territorial.
+          </p>
+
+          <a
+            href="https://admisiones.unal.edu.co/pregrado/"
+            target="_blank"
+            class="special-main-link"
+          >
+            Conocer PAET
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+
+        </article>
+
+      </div>
+
+    </div>
+
+
+    <!-- =====================================
+         INFORMACIÓN SOBRE LAS PRUEBAS
+    ====================================== -->
+
+    <div class="admission-block admission-tests">
+
+      <div class="admission-block-heading">
+
+        <span>Prepárate</span>
+
+        <h3>
+          Información sobre las pruebas
+        </h3>
+
+      </div>
+
+
+      <div class="tests-grid">
+
+        <a
+          href="https://admisiones.unal.edu.co/pregrado/"
+          target="_blank"
+          class="test-card"
+        >
+
+          <i class="fa-solid fa-file-pen"></i>
+
+          <div>
+
+            <h4>
+              Prueba de admisión
+            </h4>
+
+            <p>
+              Consulta información general sobre la prueba.
+            </p>
+
+          </div>
+
+          <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+
+        <a
+          href="https://admisiones.unal.edu.co/pregrado/"
+          target="_blank"
+          class="test-card"
+        >
+
+          <i class="fa-solid fa-clipboard-check"></i>
+
+          <div>
+
+            <h4>
+              Pruebas específicas
+            </h4>
+
+            <p>
+              Información para programas que requieren pruebas adicionales.
+            </p>
+
+          </div>
+
+          <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+
+        <a
+          href="https://admisiones.unal.edu.co/pregrado/"
+          target="_blank"
+          class="test-card"
+        >
+
+          <i class="fa-solid fa-computer-mouse"></i>
+
+          <div>
+
+            <h4>
+              Demostraciones interactivas
+            </h4>
+
+            <p>
+              Consulta los recursos disponibles para conocer
+              el funcionamiento de la prueba.
+            </p>
+
+          </div>
+
+          <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- BOTÓN FINAL -->
+
+    <div class="admission-main-action">
+
+      <div>
+
+        <strong>
+          ¿Necesitas más información?
+        </strong>
+
+        <span>
+          Consulta directamente el portal oficial de Admisiones UNAL.
+        </span>
+
+      </div>
+
+      <a
+        href="https://admisiones.unal.edu.co/pregrado/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary"
+      >
+        Portal de Admisiones
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+    <!-- =========================================
+         SERVICIOS PRINCIPALES
+    ========================================== -->
+
+    <section class="section student-hub" id="servicios">
+
+      <div class="container">
+
+        <div class="section-heading centered">
+
+          <span class="section-tag">
+            Servicios para estudiantes
+          </span>
+
+          <h2>
+            Encuentra lo que necesitas
+          </h2>
+
+          <p>
+            Selecciona una categoría para consultar información,
+            recursos y enlaces relacionados.
+          </p>
+
+        </div>
+
+
+        <div class="hub-grid">
+
+
+          <!-- VIDA ACADÉMICA -->
+
+          <button
+            class="hub-card"
+            onclick="openModal('modal-academico')"
+          >
+
+            <div class="hub-icon">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <h3>
+              Vida académica
+            </h3>
+
+            <p>
+              SIA, calendario, asignaturas, notas y normativa.
+            </p>
+
+            <span>
+              Ver información
+              <i class="fa-solid fa-arrow-right"></i>
+            </span>
+
+          </button>
+
+
+          <!-- BIENESTAR -->
+
+          <button
+            class="hub-card"
+            onclick="openModal('modal-bienestar')"
+          >
+
+            <div class="hub-icon">
+              <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+
+            <h3>
+              Bienestar y apoyos
+            </h3>
+
+            <p>
+              SIBU, salud, acompañamiento, cultura y deporte.
+            </p>
+
+            <span>
+              Ver información
+              <i class="fa-solid fa-arrow-right"></i>
+            </span>
+
+          </button>
+
+
+          <!-- TRÁMITES -->
+
+          <button
+            class="hub-card"
+            onclick="openModal('modal-tramites')"
+          >
+
+            <div class="hub-icon">
+              <i class="fa-solid fa-file-lines"></i>
+            </div>
+
+            <h3>
+              Trámites estudiantiles
+            </h3>
+
+            <p>
+              Solicitudes académicas y procesos ante la Facultad.
+            </p>
+
+            <span>
+              Ver información
+              <i class="fa-solid fa-arrow-right"></i>
+            </span>
+
+          </button>
+
+
+          <!-- OPORTUNIDADES -->
+
+          <button
+            class="hub-card"
+            onclick="openModal('modal-oportunidades')"
+          >
+
+            <div class="hub-icon">
+              <i class="fa-solid fa-earth-americas"></i>
+            </div>
+
+            <h3>
+              Oportunidades
+            </h3>
+
+            <p>
+              Movilidad, investigación, becas y convocatorias.
+            </p>
+
+            <span>
+              Ver información
+              <i class="fa-solid fa-arrow-right"></i>
+            </span>
+
+          </button>
+
+
+          <!-- HERRAMIENTAS -->
+
+          <button
+            class="hub-card"
+            onclick="openModal('modal-herramientas')"
+          >
+
+            <div class="hub-icon">
+              <i class="fa-solid fa-laptop-code"></i>
+            </div>
+
+            <h3>
+              Herramientas digitales
+            </h3>
+
+            <p>
+              Correo, plataformas y recursos institucionales.
+            </p>
+
+            <span>
+              Ver información
+              <i class="fa-solid fa-arrow-right"></i>
+            </span>
+
+          </button>
+
+
+          <!-- CAMPUS -->
+
+          <button
+            class="hub-card"
+            onclick="openModal('modal-fechas')"
+            >
+            <div class="hub-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+            </div>
+
+            <h3>
+                Fechas importantes
+            </h3>
+
+            <p>
+                Consulta fechas y etapas importantes de los procesos de admisión.
+            </p>
+
+            <span>
+                Ver información
+                <i class="fa-solid fa-arrow-right"></i>
+            </span>
+            </button>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         PREGUNTAS FRECUENTES
+    ========================================== -->
+
+    <section class="section faq-section" id="preguntas">
+
+      <div class="container">
+
+        <div class="section-heading centered">
+
+          <span class="section-tag">
+            Preguntas frecuentes
+          </span>
+
+          <h2>
+            Resuelve tus dudas más comunes
+          </h2>
+
+        </div>
+
+
+        <div class="faq-container">
+
+
+          <details>
+
+            <summary>
+              ¿Dónde puedo consultar mis notas?
+              <i class="fa-solid fa-plus"></i>
+            </summary>
+
+            <p>
+              Puedes consultar tus calificaciones, asignaturas
+              e historia académica a través del SIA.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              ¿Dónde reviso las fechas importantes del semestre?
+              <i class="fa-solid fa-plus"></i>
+            </summary>
+
+            <p>
+              Debes consultar el calendario académico vigente de la
+              Universidad Nacional de Colombia, Sede Medellín.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              ¿Dónde realizo un trámite académico?
+              <i class="fa-solid fa-plus"></i>
+            </summary>
+
+            <p>
+              Los trámites y solicitudes académicas se realizan
+              mediante los canales definidos por la Facultad de Minas.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              ¿Dónde consulto apoyos económicos?
+              <i class="fa-solid fa-plus"></i>
+            </summary>
+
+            <p>
+              Bienestar Universitario y SIBU publican información
+              sobre apoyos, servicios y convocatorias.
+            </p>
+
+          </details>
+
+
+          <details>
+
+            <summary>
+              ¿Dónde puedo consultar intercambios y movilidad?
+              <i class="fa-solid fa-plus"></i>
+            </summary>
+
+            <p>
+              Las oportunidades de movilidad se consultan mediante
+              los canales oficiales de relaciones interinstitucionales.
+            </p>
+
+          </details>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         CONTACTO
+    ========================================== -->
+
+    <section class="section contact-section" id="contacto"  style="background-color: #ffb000;">
+
+      <div class="container" >
+
+        <div class="contact-box">
+
+          <div>
+
+            <span class="section-tag light">
+              Orientación
+            </span>
+
+            <h2>
+              ¿No sabes dónde realizar tu solicitud?
+            </h2>
+
+            <p>
+              Consulta el área adecuada según el tipo de trámite
+              o necesidad que tengas.
+            </p>
+
+          </div>
+
+
+          <div class="contact-options">
+
+
+            <a href="#" style="background-color: rgba(255,255,255,0.18); color: #222;">
+
+              <i class="fa-solid fa-user-graduate"></i>
+
+              <div>
+                <strong>
+                  Asuntos Estudiantiles
+                </strong>
+
+                <span>
+                  Trámites y orientación académica
+                </span>
+              </div>
+
+            </a>
+
+
+            <a href="#" style="background-color: rgba(255,255,255,0.18); color: #222;">
+
+              <i class="fa-solid fa-heart"></i>
+
+              <div>
+                <strong>
+                  Bienestar Universitario
+                </strong>
+
+                <span>
+                  Salud, acompañamiento y apoyos
+                </span>
+              </div>
+
+            </a>
+            <a href="#" style="background-color: rgba(255,255,255,0.18); color: #222;">
+
+              <i class="fa-solid fa-heart"></i>
+
+              <div>
+                <strong>
+                  Punto de contacto
+                </strong>
+
+                <span>
+                  Orientación y atención a estudiantes
+                </span>
+              </div>
+
+            </a>
+
+
+            <a href="#" style="background-color: rgba(255,255,255,0.18); color: #222;">
+
+              <i class="fa-solid fa-file-circle-check"></i>
+
+              <div>
+                <strong>
+                  Registro y Matrícula
+                </strong>
+
+                <span>
+                  Matrícula y documentación académica
+                </span>
+              </div>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================
+       MODAL ESTUDIANTE NUEVO
+  ========================================== -->
+
+  <div class="modal" id="modal-nuevo">
+
+    <div
+      class="modal-overlay"
+      onclick="closeModal('modal-nuevo')"
+    ></div>
+
+
+    <div class="modal-content">
+
+      <button
+        class="modal-close"
+        onclick="closeModal('modal-nuevo')"
+        aria-label="Cerrar"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+
+      <div class="modal-header">
+
+        <div class="modal-icon">
+          <i class="fa-solid fa-compass"></i>
+        </div>
+
+        <div>
+
+          <span class="modal-label">
+            Estudiante nuevo
+          </span>
+
+          <h2>
+            Primeros pasos en la UNAL
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <p class="modal-intro">
+        Si acabas de ingresar, te recomendamos comenzar
+        por estos recursos.
+      </p>
+
+
+      <div class="modal-links">
+
+        <a href="#" class="modal-link">
+
+          <div>
+            <strong>Correo institucional</strong>
+            <span>Conoce tu cuenta y servicios digitales.</span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+
+        <a href="#" class="modal-link">
+
+          <div>
+            <strong>SIA</strong>
+            <span>Consulta materias, horarios y notas.</span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+
+        <a href="#" class="modal-link">
+
+          <div>
+            <strong>Calendario académico</strong>
+            <span>Revisa las fechas importantes del semestre.</span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+
+        <a href="#" class="modal-link">
+
+          <div>
+            <strong>Bienestar Universitario</strong>
+            <span>Conoce apoyos, salud y acompañamiento.</span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+
+        <a href="#" class="modal-link">
+
+          <div>
+            <strong>Campus y rutas</strong>
+            <span>Ubica bloques, bibliotecas y servicios.</span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================
+       MODAL VIDA ACADÉMICA
+  ========================================== -->
+
+  <div class="modal" id="modal-academico">
+
+    <div
+      class="modal-overlay"
+      onclick="closeModal('modal-academico')"
+    ></div>
+
+
+    <div class="modal-content">
+
+      <button
+        class="modal-close"
+        onclick="closeModal('modal-academico')"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+
+      <div class="modal-header">
+
+        <div class="modal-icon">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+
+        <div>
+          <span class="modal-label">Vida académica</span>
+          <h2>Gestiona tu información académica</h2>
+        </div>
+
+      </div>
+
+
+      <p class="modal-intro">
+        Consulta los principales recursos relacionados con
+        tu proceso académico.
+      </p>
+
+
+      <div class="modal-links">
+
+        <a href="#" class="modal-link">
+
+          <div>
+            <strong>SIA</strong>
+            <span>Asignaturas, notas, horarios e historia académica.</span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+
+        <a href="#" class="modal-link">
+
+          <div>
+            <strong>Calendario académico</strong>
+            <span>Fechas oficiales de cada periodo académico.</span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+
+        <a href="#" class="modal-link">
+
+          <div>
+            <strong>Inscripción de asignaturas</strong>
+            <span>Información sobre inscripción, adición y cancelación.</span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+
+        <a href="#" class="modal-link">
+
+          <div>
+            <strong>Estatuto Estudiantil</strong>
+            <span>Derechos, deberes y normativa académica.</span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+      </div>
+
+
+      <div class="modal-tip">
+
+        <i class="fa-solid fa-lightbulb"></i>
+
+        <div>
+
+          <strong>Si eres estudiante nuevo</strong>
+
+          <p>
+            Revisa primero el SIA y el calendario académico.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================
+       MODAL BIENESTAR
+  ========================================== -->
+
+  <div class="modal" id="modal-bienestar">
+
+    <div
+      class="modal-overlay"
+      onclick="closeModal('modal-bienestar')"
+    ></div>
+
+
+    <div class="modal-content">
+
+      <button
+        class="modal-close"
+        onclick="closeModal('modal-bienestar')"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+
+      <div class="modal-header">
+
+        <div class="modal-icon">
+          <i class="fa-solid fa-heart-pulse"></i>
+        </div>
+
+        <div>
+          <span class="modal-label">Bienestar Universitario</span>
+          <h2>Bienestar y apoyos</h2>
+        </div>
+
+      </div>
+
+
+      <p class="modal-intro">
+        Encuentra servicios orientados a tu bienestar
+        y permanencia en la Universidad.
+      </p>
+
+
+      <div class="modal-links">
+
+        <a href="#" class="modal-link">
+
+          <div>
+            <strong>SIBU</strong>
+            <span>Servicios y convocatorias de Bienestar.</span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+
+        <a href="#" class="modal-link">
+
+          <div>
+            <strong>Apoyos socioeconómicos</strong>
+            <span>Consulta beneficios y convocatorias disponibles.</span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+
+        <a href="#" class="modal-link">
+
+          <div>
+            <strong>Salud y acompañamiento</strong>
+            <span>Servicios de atención, orientación y prevención.</span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+
+        <a href="#" class="modal-link">
+
+          <div>
+            <strong>Cultura y deporte</strong>
+            <span>Actividades culturales, recreativas y deportivas.</span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================
+       MODAL TRÁMITES
+  ========================================== -->
+
+  <div class="modal" id="modal-tramites">
+
+    <div
+      class="modal-overlay"
+      onclick="closeModal('modal-tramites')"
+    ></div>
+
+
+    <div class="modal-content">
+
+      <button
+        class="modal-close"
+        onclick="closeModal('modal-tramites')"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+
+      <div class="modal-header">
+
+        <div class="modal-icon">
+          <i class="fa-solid fa-file-lines"></i>
+        </div>
+
+        <div>
+          <span class="modal-label">Facultad de Minas</span>
+          <h2>Trámites estudiantiles</h2>
+        </div>
+
+      </div>
+
+
+      <p class="modal-intro">
+        Consulta los principales trámites y solicitudes académicas.
+      </p>
+
+
+      <div class="modal-links">
+
+        <a href="#" class="modal-link">
+
+          <div>
+            <strong>Adición y cancelación de asignaturas</strong>
+            <span>Consulta requisitos y procedimientos.</span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+
+        <a href="#" class="modal-link">
+
+          <div>
+            <strong>Reingreso y reserva de cupo</strong>
+            <span>Información sobre continuidad académica.</span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+
+        <a href="#" class="modal-link">
+
+          <div>
+            <strong>Homologaciones y reconocimientos</strong>
+            <span>Solicitudes relacionadas con asignaturas cursadas.</span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+
+        <a href="#" class="modal-link">
+
+          <div>
+            <strong>Trabajo de grado</strong>
+            <span>Consulta requisitos, procesos y solicitudes.</span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+
+        <a href="#" class="modal-link">
+
+          <div>
+            <strong>Todos los trámites</strong>
+            <span>Consulta el portal de trámites estudiantiles.</span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================
+       MODAL OPORTUNIDADES
+  ========================================== -->
+
+  <div class="modal" id="modal-oportunidades">
+
+    <div
+      class="modal-overlay"
+      onclick="closeModal('modal-oportunidades')"
+    ></div>
+
+
+    <div class="modal-content">
+
+      <button
+        class="modal-close"
+        onclick="closeModal('modal-oportunidades')"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+
+      <div class="modal-header">
+
+        <div class="modal-icon">
+          <i class="fa-solid fa-earth-americas"></i>
+        </div>
+
+        <div>
+          <span class="modal-label">Convocatorias</span>
+          <h2>Oportunidades para estudiantes</h2>
+        </div>
+
+      </div>
+
+
+      <p class="modal-intro">
+        Explora oportunidades académicas, profesionales
+        y de movilidad.
+      </p>
+
+
+      <div class="modal-links">
+
+        <a href="#" class="modal-link">
+
+          <div>
+            <strong>Movilidad académica</strong>
+            <span>Intercambios y estancias nacionales e internacionales.</span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+
+        <a href="#" class="modal-link">
+
+          <div>
+            <strong>Investigación</strong>
+            <span>Semilleros, grupos y convocatorias.</span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+
+        <a href="#" class="modal-link">
+
+          <div>
+            <strong>Monitorías</strong>
+            <span>Convocatorias de apoyo académico y administrativo.</span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+
+        <a href="#" class="modal-link">
+
+          <div>
+            <strong>Prácticas y pasantías</strong>
+            <span>Oportunidades de experiencia profesional.</span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+
+        <a href="#" class="modal-link">
+
+          <div>
+            <strong>Becas y convocatorias</strong>
+            <span>Consulta oportunidades internas y externas.</span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================
+       MODAL HERRAMIENTAS
+  ========================================== -->
+
+  <div class="modal" id="modal-herramientas">
+
+    <div
+      class="modal-overlay"
+      onclick="closeModal('modal-herramientas')"
+    ></div>
+
+
+    <div class="modal-content">
+
+      <button
+        class="modal-close"
+        onclick="closeModal('modal-herramientas')"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+
+      <div class="modal-header">
+
+        <div class="modal-icon">
+          <i class="fa-solid fa-laptop-code"></i>
+        </div>
+
+        <div>
+          <span class="modal-label">Recursos digitales</span>
+          <h2>Herramientas institucionales</h2>
+        </div>
+
+      </div>
+
+
+      <p class="modal-intro">
+        Accede a las principales plataformas digitales de la Universidad.
+      </p>
+
+
+      <div class="modal-links">
+
+        <a href="#" class="modal-link">
+
+          <div>
+            <strong>Correo institucional</strong>
+            <span>Comunicación oficial de la Universidad.</span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+
+        <a href="#" class="modal-link">
+
+          <div>
+            <strong>UNVirtual</strong>
+            <span>Entornos y recursos virtuales de aprendizaje.</span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+        <a href="#" class="modal-link">
+
+          <div>
+            <strong>Minaslap</strong>
+            <span>Entornos y recursos virtuales de aprendizaje.</span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+
+        <a href="#" class="modal-link">
+
+          <div>
+            <strong>Bibliotecas UNAL</strong>
+            <span>Libros, bases de datos y recursos académicos.</span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================================
+       MODAL CAMPUS
+  ========================================== -->
+
+  <!-- =========================================
+     MODAL FECHAS IMPORTANTES
+========================================== -->
+
+<div class="modal" id="modal-fechas">
+
+  <div
+    class="modal-overlay"
+    onclick="closeModal('modal-fechas')"
+  ></div>
+
+
+  <div class="modal-content modal-large">
+
+    <button
+      class="modal-close"
+      onclick="closeModal('modal-fechas')"
+      aria-label="Cerrar"
+    >
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+
+    <div class="modal-header">
+
+      <div class="modal-icon">
+        <i class="fa-solid fa-calendar-days"></i>
+      </div>
+
+      <div>
+
+        <span class="modal-label">
+          Admisiones
+        </span>
+
+        <h2>
+          Fechas importantes
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <p class="modal-intro">
+      Consulta las principales fechas y etapas de los procesos
+      de admisión de pregrado.
+    </p>
+
+
+    <!-- BLOQUE 1 -->
+
+    <div class="date-group">
+
+      <div class="date-group-header">
+
+        <div class="date-group-icon">
+          <i class="fa-solid fa-users"></i>
+        </div>
+
+        <div>
+          <span>Proceso general</span>
+
+          <h3>
+            Para todos los aspirantes a algún programa curricular
+          </h3>
+        </div>
+
+      </div>
+
+
+      <div class="date-list">
+
+        <a href="#" class="date-item">
+
+          <div class="date-marker">
+            <i class="fa-solid fa-user-pen"></i>
+          </div>
+
+          <div>
+            <strong>
+              Inscripción
+            </strong>
+
+            <span>
+              Consulta las fechas habilitadas para realizar
+              el proceso de inscripción.
+            </span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+
+        <a href="#" class="date-item">
+
+          <div class="date-marker">
+            <i class="fa-solid fa-file-pen"></i>
+          </div>
+
+          <div>
+            <strong>
+              Presentación de la prueba de admisión
+            </strong>
+
+            <span>
+              Revisa la fecha, citación y condiciones
+              para presentar la prueba.
+            </span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+
+        <a href="#" class="date-item">
+
+          <div class="date-marker">
+            <i class="fa-solid fa-square-poll-vertical"></i>
+          </div>
+
+          <div>
+            <strong>
+              Publicación de resultados
+            </strong>
+
+            <span>
+              Consulta los resultados del proceso
+              de admisión.
+            </span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- BLOQUE 2 -->
+
+    <div class="date-group">
+
+      <div class="date-group-header">
+
+        <div class="date-group-icon">
+          <i class="fa-solid fa-clipboard-check"></i>
+        </div>
+
+        <div>
+          <span>Pruebas adicionales</span>
+
+          <h3>
+            Para aspirantes a programas con pruebas específicas
+          </h3>
+        </div>
+
+      </div>
+
+
+      <div class="date-list">
+
+        <a href="#" class="date-item">
+
+          <div class="date-marker">
+            <i class="fa-solid fa-calendar-check"></i>
+          </div>
+
+          <div>
+            <strong>
+              Citación a pruebas específicas
+            </strong>
+
+            <span>
+              Consulta las fechas y condiciones particulares
+              definidas para cada programa.
+            </span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+
+        <a href="#" class="date-item">
+
+          <div class="date-marker">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </div>
+
+          <div>
+            <strong>
+              Presentación de pruebas
+            </strong>
+
+            <span>
+              Verifica fecha, hora, lugar y requisitos
+              correspondientes.
+            </span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+
+        <a href="#" class="date-item">
+
+          <div class="date-marker">
+            <i class="fa-solid fa-list-check"></i>
+          </div>
+
+          <div>
+            <strong>
+              Resultados
+            </strong>
+
+            <span>
+              Consulta los resultados asociados
+              a las pruebas específicas.
+            </span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <!-- BLOQUE 3 -->
+
+    <div class="date-group">
+
+      <div class="date-group-header">
+
+        <div class="date-group-icon">
+          <i class="fa-solid fa-arrows-rotate"></i>
+        </div>
+
+        <div>
+          <span>Opciones posteriores</span>
+
+          <h3>
+            Para aspirantes que no fueron admitidos
+            a algún programa curricular
+          </h3>
+        </div>
+
+      </div>
+
+
+      <div class="date-list">
+
+        <a href="#" class="date-item">
+
+          <div class="date-marker">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+
+          <div>
+            <strong>
+              Consulta de opciones disponibles
+            </strong>
+
+            <span>
+              Revisa si existen alternativas o etapas posteriores
+              dentro del proceso de admisión.
+            </span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+
+        <a href="#" class="date-item">
+
+          <div class="date-marker">
+            <i class="fa-solid fa-list"></i>
+          </div>
+
+          <div>
+            <strong>
+              Programas con cupos disponibles
+            </strong>
+
+            <span>
+              Consulta las opciones que puedan habilitarse
+              durante el proceso.
+            </span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+
+        <a href="#" class="date-item">
+
+          <div class="date-marker">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+          </div>
+
+          <div>
+            <strong>
+              Fechas posteriores del proceso
+            </strong>
+
+            <span>
+              Revisa los plazos oficiales y las instrucciones
+              publicadas por Admisiones.
+            </span>
+          </div>
+
+          <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="modal-tip">
+
+      <i class="fa-solid fa-circle-info"></i>
+
+      <div>
+
+        <strong>
+          Importante
+        </strong>
+
+        <p>
+          Las fechas pueden cambiar entre periodos académicos.
+          Consulta siempre la información oficial de la Dirección
+          Nacional de Admisiones.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+        </div>
+    </main>
+
+    <!-- 5. Footer Institucional Oficial UNAL -->
+    <footer id="pie" role="contentinfo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>&copy; 2026 Universidad Nacional de Colombia - Sede Medellín - Facultad de Minas</p>
+                    <p><small>Facultad de Minas – Sede Medellín. Todos los derechos reservados.</small></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Esenciales UNAL (Bootstrap, jQuery y Accesibilidad) -->
+    <script src="https://minas.medellin.unal.edu.co/media/templates/site/unal/js/jquery.js?2bc458"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://minas.medellin.unal.edu.co/media/templates/site/unal/js/bootstrap.min.js?2bc458"></script>
+    <script src="https://minas.medellin.unal.edu.co/media/templates/site/unal/js/unal.js?2bc458"></script>
+    <script src="https://minas.medellin.unal.edu.co/media/templates/site/unal/js/accesibilidad.js?2bc458"></script>
+    <script src="script.js"></script>
+</body>
+</html>
